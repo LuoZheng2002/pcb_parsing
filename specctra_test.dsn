@@ -1,0 +1,180 @@
+(pcb D:\Desktop\KiCadProject\specctra_test\specctra_test.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "9.0.2")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  96520 -99060  27940 -99060  27940 -48260  96520 -48260
+            96520 -99060)
+    )
+    (via "Via[0-1]_600:300_um")
+    (rule
+      (width 200)
+      (clearance 200)
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      (place U1 63500.000000 -83820.000000 front 0.000000 (PN LM555xM))
+    )
+    (component Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical
+      (place J1 76200.000000 -78740.000000 front 0.000000 (PN Conn_01x01_Pin))
+    )
+    (component Capacitor_THT:CP_Radial_D13.0mm_P5.00mm
+      (place C1 53340.000000 -60960.000000 front 180.000000 (PN C))
+    )
+    (component LED_THT:LED_D5.0mm
+      (place D1 63500.000000 -71120.000000 front 0.000000 (PN LED))
+    )
+    (component "Package_TO_SOT_SMD:SOT-23"
+      (place Q1 58420.000000 -73660.000000 front 0.000000 (PN BF545A))
+    )
+  )
+  (library
+    (image "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      (outline (path signal 120  0 2560  -1950 2560))      
+      (pin RoundRect[T]Pad_1950.000000x600.000000_150.571000_um_0.000000_0 1 -2475 1905)
+      (pin RoundRect[T]Pad_1950.000000x600.000000_150.571000_um_0.000000_0 2 -2475 635)
+      (pin RoundRect[T]Pad_1950.000000x600.000000_150.571000_um_0.000000_0 3 -2475 -635)
+      (pin RoundRect[T]Pad_1950.000000x600.000000_150.571000_um_0.000000_0 4 -2475 -1905)
+      (pin RoundRect[T]Pad_1950.000000x600.000000_150.571000_um_0.000000_0 5 2475 -1905)
+      (pin RoundRect[T]Pad_1950.000000x600.000000_150.571000_um_0.000000_0 6 2475 -635)
+      (pin RoundRect[T]Pad_1950.000000x600.000000_150.571000_um_0.000000_0 7 2475 635)
+      (pin RoundRect[T]Pad_1950.000000x600.000000_150.571000_um_0.000000_0 8 2475 1905)
+    )
+    (image Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical
+      (outline (path signal 120  -1330 -1210  -1330 -1330))
+      (pin Rect[A]Pad_1700.000000x1700.000000_um 1 0 0)
+    )
+    (image Capacitor_THT:CP_Radial_D13.0mm_P5.00mm
+      (outline (path signal 120  -1330 -1210  -1330 -1330))
+      (pin RoundRect[A]Pad_2400.000000x2400.000000_250.952000_um_0.000000_0 1 0 0)
+      (pin Round[A]Pad_2400.000000_um 2 5000 0)
+    )
+    (image LED_THT:LED_D5.0mm
+      (outline (path signal 120  -1290 1545  -1290 -1545))      
+      (pin Rect[A]Pad_1800.000000x1800.000000_um 1 0 0)
+      (pin Round[A]Pad_1800.000000_um 2 2540 0)
+    )
+    (image "Package_TO_SOT_SMD:SOT-23"
+      (outline (path signal 120  0 1560  -650 1560))      
+      (pin RoundRect[T]Pad_1475.000000x600.000000_150.571000_um_0.000000_0 1 -937.5 950)
+      (pin RoundRect[T]Pad_1475.000000x600.000000_150.571000_um_0.000000_0 2 -937.5 -950)
+      (pin RoundRect[T]Pad_1475.000000x600.000000_150.571000_um_0.000000_0 3 937.5 0)
+    )
+    (padstack Round[A]Pad_1800.000000_um
+      (shape (circle F.Cu 1800))
+      (shape (circle B.Cu 1800))
+      (attach off)
+    )
+    (padstack Round[A]Pad_2400.000000_um
+      (shape (circle F.Cu 2400))
+      (shape (circle B.Cu 2400))
+      (attach off)
+    )
+    (padstack RoundRect[A]Pad_2400.000000x2400.000000_250.952000_um_0.000000_0
+      (shape (polygon F.Cu 0  -1200.95 949.999  -1181.85 1046.03  -1127.45 1127.45  -1046.03 1181.85
+            -949.999 1200.95  949.999 1200.95  1046.03 1181.85  1127.45 1127.45
+            1181.85 1046.03  1200.95 949.999  1200.95 -949.999  1181.85 -1046.03
+            1127.45 -1127.45  1046.03 -1181.85  949.999 -1200.95  -949.999 -1200.95
+            -1046.03 -1181.85  -1127.45 -1127.45  -1181.85 -1046.03  -1200.95 -949.999
+            -1200.95 949.999))
+      (shape (polygon B.Cu 0  -1200.95 949.999  -1181.85 1046.03  -1127.45 1127.45  -1046.03 1181.85
+            -949.999 1200.95  949.999 1200.95  1046.03 1181.85  1127.45 1127.45
+            1181.85 1046.03  1200.95 949.999  1200.95 -949.999  1181.85 -1046.03
+            1127.45 -1127.45  1046.03 -1181.85  949.999 -1200.95  -949.999 -1200.95
+            -1046.03 -1181.85  -1127.45 -1127.45  -1181.85 -1046.03  -1200.95 -949.999
+            -1200.95 949.999))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_1475.000000x600.000000_150.571000_um_0.000000_0
+      (shape (polygon F.Cu 0  -738.071 150  -726.609 207.621  -693.97 256.47  -645.121 289.109
+            -587.499 300.57  587.5 300.571  645.121 289.109  693.97 256.47
+            726.609 207.621  738.07 149.999  738.071 -150  726.609 -207.621
+            693.97 -256.47  645.121 -289.109  587.499 -300.57  -587.5 -300.571
+            -645.121 -289.109  -693.97 -256.47  -726.609 -207.621  -738.07 -149.999
+            -738.071 150))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_1950.000000x600.000000_150.571000_um_0.000000_0
+      (shape (polygon F.Cu 0  -975.571 150  -964.109 207.621  -931.47 256.47  -882.621 289.109
+            -824.999 300.57  825 300.571  882.621 289.109  931.47 256.47
+            964.109 207.621  975.57 149.999  975.571 -150  964.109 -207.621
+            931.47 -256.47  882.621 -289.109  824.999 -300.57  -825 -300.571
+            -882.621 -289.109  -931.47 -256.47  -964.109 -207.621  -975.57 -149.999
+            -975.571 150))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1700.000000x1700.000000_um
+      (shape (rect F.Cu -850 -850 850 850))
+      (shape (rect B.Cu -850 -850 850 850))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1800.000000x1800.000000_um
+      (shape (rect F.Cu -900 -900 900 900))
+      (shape (rect B.Cu -900 -900 900 900))
+      (attach off)
+    )
+    (padstack "Via[0-1]_600:300_um"
+      (shape (circle F.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net "Net-(U1-R)"
+      (pins U1-4 C1-2)
+    )
+    (net "Net-(U1-DIS)"
+      (pins U1-7 C1-1)
+    )
+    (net "Net-(D1-A)"
+      (pins U1-8 D1-2)
+    )
+    (net "Net-(D1-K)"
+      (pins U1-3 D1-1)
+    )
+    (net "Net-(J1-Pin_1)"
+      (pins U1-6 J1-1)
+    )
+    (net "Net-(Q1-D)"
+      (pins U1-5 Q1-2)
+    )
+    (net "Net-(Q1-G)"
+      (pins U1-2 Q1-3)
+    )
+    (net "Net-(Q1-S)"
+      (pins U1-1 Q1-1)
+    )
+    (class kicad_default "Net-(D1-A)" "Net-(D1-K)" "Net-(J1-Pin_1)" "Net-(Q1-D)"
+      "Net-(Q1-G)" "Net-(Q1-S)" "Net-(U1-DIS)" "Net-(U1-R)"
+      (circuit
+        (use_via "Via[0-1]_600:300_um")
+      )
+      (rule
+        (width 200)
+        (clearance 200)
+      )
+    )
+  )
+  (wiring
+  )
+)
