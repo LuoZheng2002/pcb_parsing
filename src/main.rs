@@ -11,4 +11,5 @@ fn main() {
             panic!("Failed to parse the DSN file");
         }
     };
+    println!("{:#?}", result);
 }
