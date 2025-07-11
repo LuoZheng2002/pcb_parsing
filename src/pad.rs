@@ -14,11 +14,11 @@ pub enum PadShape {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct PadID(pub String);
+pub struct PadName(pub String);
 
 #[derive(Debug, Clone)]
 pub struct Pad {
-    pub id: PadID,
+    pub name: PadName,
     pub position: (f64, f64),
     pub shape: PadShape,
     pub rotation: cgmath::Deg<f32>, // Rotation in degrees

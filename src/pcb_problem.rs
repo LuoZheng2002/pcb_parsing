@@ -18,19 +18,21 @@ use crate::{distinct_color_generator::{ColorFloat3, DistinctColorGenerator}, pad
 
 #[derive(Debug, Clone)]
 pub struct Connection {
-    pub net_id: NetName,               // The net that the connection belongs to
+    pub net_name: NetName,               // The net that the connection belongs to
     pub connection_id: ConnectionID, // Unique identifier for the connection    
     pub sink: Pad,
-    pub trace_width: f32, // Width of the trace
-    pub trace_clearance: f32, // Clearance around the trace
+    pub sink_trace_width: f32, // Width of the trace
+    pub sink_trace_clearance: f32, // Clearance around the trace
     // pub traces: HashMap<TraceID, TraceInfo>, // List of traces connecting the source and sink pads
 }
 
 #[derive(Debug, Clone)]
 pub struct NetInfo {
-    pub net_id: NetName,
+    pub net_name: NetName,
     pub color: ColorFloat3,                                   // Color of the net
     pub source: Pad,
+    pub source_trace_width: f32, // Width of the trace from the source pad
+    pub source_trace_clearance: f32, // Clearance around the trace from the source pad
     pub connections: HashMap<ConnectionID, Rc<Connection>>, // List of connections in the net, the source pad is the same
 }
 
@@ -68,30 +70,32 @@ impl PcbProblem {
             distinct_color_generator: Box::new(DistinctColorGenerator::new()),
         }
     }
-    pub fn add_net(&mut self, net_id: NetName, source: Pad) {
-        assert!(!self.nets.contains_key(&net_id), "NetID already exists: {}", net_id.0);
+    pub fn add_net(&mut self, net_name: NetName, source: Pad, source_trace_width: f32, source_trace_clearance: f32) {
+        assert!(!self.nets.contains_key(&net_name), "NetID already exists: {}", net_name.0);
         let color = self.distinct_color_generator.next().expect("Distinct color generator exhausted");
         let net_info = NetInfo {
-            net_id: net_id.clone(),
+            net_name: net_name.clone(),
             color,
             connections: HashMap::new(),
             source,
+            source_trace_width,
+            source_trace_clearance,
         };
-        self.nets.insert(net_id, net_info);
+        self.nets.insert(net_name, net_info);
     }
     /// assert the sources in the same net are the same
-    pub fn add_connection(&mut self, net_id: NetName, sink: Pad, trace_width: f32, trace_clearance: f32) -> ConnectionID {
-        let net_info = self.nets.get_mut(&net_id).expect("NetID not found");
+    pub fn add_connection(&mut self, net_name: NetName, sink: Pad, trace_width: f32, trace_clearance: f32) -> ConnectionID {
+        let net_info = self.nets.get_mut(&net_name).expect("NetID not found");
         let connection_id = self
             .connection_id_generator
             .next()
             .expect("ConnectionID generator exhausted");
         let connection = Connection {
-            net_id,
+            net_name,
             connection_id,
             sink,
-            trace_width,
-            trace_clearance,
+            sink_trace_width: trace_width,
+            sink_trace_clearance: trace_clearance,
         };
         net_info.connections.insert(connection_id, Rc::new(connection));
         connection_id
