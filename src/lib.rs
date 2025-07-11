@@ -2,3 +2,8 @@ pub mod s_expr;
 pub mod parse_to_s_expr;
 pub mod parse_to_struct;
 pub mod dsn_struct;
+pub mod pcb_problem;
+pub mod pad;
+pub mod distinct_color_generator;
+pub mod parse_to_display_format;
+pub mod shapes;
