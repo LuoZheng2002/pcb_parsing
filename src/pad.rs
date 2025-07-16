@@ -1,15 +1,16 @@
-
 #[derive(Debug, Clone)]
 pub enum PadShape {
     Circle {
         diameter: f32,
     },
-    Square {
-        side_length: f32,
-    },
     Rectangle {
         width: f32,
         height: f32,
+    },
+    RoundRect {
+        width: f32,
+        height: f32,
+        corner_radius: f32,
     },
 }
 
